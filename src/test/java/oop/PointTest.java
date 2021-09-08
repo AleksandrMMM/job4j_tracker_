@@ -16,6 +16,7 @@ public class PointTest {
         assertThat(rsl, is(2.0));
     }
 
+
     @Test
     public void testDistance3d() {
         Point x = new Point(1, 2, 3);
