@@ -7,10 +7,7 @@ public class Profession {
     protected String education;
     protected String birthday;
 
-    public Profession() {
 
-
-    }
 
     public Profession(String name, String surName, String education, String birthday) {
         this.name = name;
