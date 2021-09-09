@@ -1,0 +1,28 @@
+package pojo;
+
+public class Shop {
+
+    public static void main(String[] args) {
+        Product[] products = new Product[5];
+        products[0] = new Product("Milk", 10);
+        products[1] = new Product("Bread", 4);
+        products[2] = new Product("Egg", 19);
+
+        for (Product pro: products) {
+            if (pro != null) {
+                System.out.println(pro.getName());
+            }
+        }
+        System.out.println(indexOfNull(products));
+    }
+
+    public static int indexOfNull(Product[] products) {
+
+        for (int i = 0; i < products.length; i++) {
+            if (products[i] == null) {
+                return i;
+            }
+        }
+        return -1;
+    }
+}
