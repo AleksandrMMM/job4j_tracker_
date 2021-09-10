@@ -1,5 +1,9 @@
 package pojo;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class Library {
 
     public static void main(String[] args) {
@@ -15,10 +19,17 @@ public class Library {
         books[2] = book3;
         books[3] = book4;
 
+        List<Book> bookList = new ArrayList<Book>();
+        bookList = Arrays.asList(books);
+
+        for (Book bb: bookList) {
+            System.out.println(bb.getName());
+        }
+        System.out.println();
         for (Book bo: books) {
             System.out.println(bo.getName());
         }
-
+        System.out.println();
         Book bookTemp = books[0];
         books[0] = books[3];
         books[3] = bookTemp;
@@ -28,7 +39,7 @@ public class Library {
         }
 
         for (Book b: books) {
-            if (b.getName().equals("Clean Code")) {
+            if ("Clean Code".equals(b.getName())) {
                 System.out.println(b.getName());
         }
 
