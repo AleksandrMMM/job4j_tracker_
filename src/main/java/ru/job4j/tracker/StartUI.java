@@ -11,13 +11,25 @@ public class StartUI {
             showMenu();
             System.out. println("Select: ");
             int select = Integer.parseInt(scanner.nextLine());
-            if (select == 0) {
+            if (select != 6) {
+                System.out.println("Пользователь выбрал: " + select);
+            }else if (select == 0) {
                 System.out.println("=== Create a new Item ====");
                 System.out.println("Enter name: ");
                 String name = scanner.nextLine();
                 Item item = new Item(name);
                 tracker.add(item);
                 System.out.println("Добавленная заявка: " + item);
+            }else if (select == 1) {
+                System.out.println("=== Show all items ====");
+                Item[] items = tracker.findAll();
+                if (items.length > 0) {
+                    for (Item it: items) {
+                        System.out.println(it);
+                    }
+                }else {
+                    System.out.println("Хранилище еще не содержит заявок");
+                }
             }else if(select == 6){
                 run = false;
             }
