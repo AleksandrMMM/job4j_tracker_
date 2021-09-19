@@ -10,6 +10,7 @@ public class StartUI {
         String name = input.askString("Enter name: ");
         Item item = new Item(name);
         tracker.add(item);
+        System.out.println("Добавлена заявка: " + item);
     }
 
     public static void findAllItem(Input input, Tracker tracker) {
