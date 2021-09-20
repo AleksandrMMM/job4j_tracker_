@@ -38,6 +38,7 @@ public class StartUI {
                 new FindAllItem(),
                 new FindByNameItem(),
                 new FindByIdItem(),
+                new Exit()
         };
         new StartUI().init(input, tracker, actions);
     }
