@@ -5,6 +5,11 @@ import java.util.Scanner;
 
 public class StartUI {
 
+    private final Output out;
+    public StartUI(Output out) {
+        this.out = out;
+    }
+
     public void init(Input input, Tracker tracker, UserAction[] userActions) {
         boolean run = true;
         while (run) {
@@ -26,17 +31,19 @@ public class StartUI {
     }
 
     public static void main(String[] args) {
+        Output output = new ConsoleOutput();
         Input input = new ConsoleInput();
         Tracker tracker = new Tracker();
         UserAction[] actions = {
                 new CreateItem(),
+                new CreateAction(output),
                 new DeleteItem(),
                 new FindAllItem(),
                 new FindByNameItem(),
                 new FindByIdItem(),
                 new Exit()
         };
-        new StartUI().init(input, tracker, actions);
+        new StartUI(output).init(input, tracker, actions);
     }
 
 }
