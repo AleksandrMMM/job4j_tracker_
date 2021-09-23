@@ -12,10 +12,6 @@ public class StartUI {
             int select = input.askInt("Select: ");
             UserAction userAction = userActions[select];
             run = userAction.execute(input, tracker);
-            if (select == 6) {
-                System.out.println("--- Exit program ---");
-                run = false;
-            }
         }
 
 
