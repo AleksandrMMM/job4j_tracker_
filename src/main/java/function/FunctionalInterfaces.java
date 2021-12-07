@@ -7,9 +7,7 @@ public class FunctionalInterfaces {
     public static void main(String[] args) {
         Map<Integer, String> map = new HashMap<>();
         BiConsumer<Integer, String> biCon = (s1, s2) -> map.put(s1, s2);
-
         biCon.accept(1, "one");
-
         BiPredicate<Integer, String> biPred = (s1, s2) -> s1 % 2 == 0 || s2.length() == 4;
         for (Integer i : map.keySet()) {
 
@@ -26,6 +24,5 @@ public class FunctionalInterfaces {
             con.accept(func.apply(s));
             System.out.println(s.toUpperCase());
         }
-
     }
 }
