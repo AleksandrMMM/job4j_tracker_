@@ -6,9 +6,9 @@ import java.util.function.*;
 public class FunctionalInterfaces {
     public static void main(String[] args) {
         Map<Integer, String> map = new HashMap<>();
-        BiConsumer<Integer, String> biCon = (s1, s2) -> map.put(s1, s2);
+        BiConsumer<Integer, String> biCon = (i, s2) -> map.put(i, s2);
         biCon.accept(1, "one");
-        BiPredicate<Integer, String> biPred = (s1, s2) -> s1 % 2 == 0 || s2.length() == 4;
+        BiPredicate<Integer, String> biPred = (i, s2) -> i % 2 == 0 || s2.length() == 4;
         for (Integer i : map.keySet()) {
 
             if (biPred.test(i, map.get(i))) {
