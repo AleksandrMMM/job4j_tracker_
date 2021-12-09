@@ -21,8 +21,6 @@ public class FunctionInterfaceUsage {
         Consumer<String> consumer = (s) -> System.out.println(s);
         consumer.accept(sup.get());
 
-        // Перепишем пример на применение BiConsumer
-
         Supplier<String> sup4 = () -> "New String For Interface";
         BiConsumer<String, String> consumer2 = (s, s1) -> System.out.println(s + s1);
         consumer2.accept(sup.get(), " and Second String");
