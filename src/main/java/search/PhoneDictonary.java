@@ -2,6 +2,7 @@ package search;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class PhoneDictonary {
 
@@ -12,18 +13,10 @@ public class PhoneDictonary {
     }
 
     public List<Person> find(String key) {
-        List<Person> result = new  ArrayList<>();
-        for (Person person: persons) {
-            if (person.getName().contains(key)) {
-                result.add(person);
-            } else  if (person.getPhone().contains(key)) {
-                result.add(person);
-            }else if(person.getAddress().contains(key)) {
-                result.add(person);
-            }else if(person.getSurname().contains(key)) {
-                result.add(person);
-            }
-        }
+        List<Person> result;
+      result = persons.stream().filter(value -> value.getName().contains(key) || value.getPhone().contains(key) ||
+                value.getAddress().contains(key) || value.getSurname().contains(key)).collect(Collectors.toList());
+
         return result;
 
     }

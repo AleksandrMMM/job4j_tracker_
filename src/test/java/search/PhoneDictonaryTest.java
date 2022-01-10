@@ -19,4 +19,14 @@ public class PhoneDictonaryTest {
         List<Person> persons = phones.find("Petr");
         assertThat(persons.get(0).getSurname(), is("Arsentev"));
     }
+
+    @Test
+    public void whenNoFindByName() {
+        PhoneDictonary phones = new PhoneDictonary();
+        phones.add(
+                new Person("Petr", "Arsentev", "534872", "Bryansk")
+        );
+        List<Person> persons = phones.find("Ivan");
+        assertThat(persons.size(), is(0));
+    }
 }
