@@ -14,7 +14,7 @@ public class ReplaceItem implements UserAction {
         String name = input.askString("Enter name: ");
         Item item = new Item(name);
         if (tracker.replace(id, item)) {
-            System.out.println("Заявка изменена успешно.");
+            System.out.println("replace item " + item.getName() + " to " + item.getName());
         }else {
             System.out.println("Ошибка замены заявки.");
             rslt = false;
