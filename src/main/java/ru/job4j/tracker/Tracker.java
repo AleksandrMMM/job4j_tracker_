@@ -17,11 +17,11 @@ public class Tracker {
 
     public Item findById(int id) {
         int index = indexOf(id);
-        return index != -1 ? items.get(id) : null;
+        return index != -1 ? items.get(index) : null;
     }
 
     public List<Item> findAll() {
-        return items;
+        return List.copyOf(items);
 
     }
 
@@ -38,7 +38,7 @@ public class Tracker {
 
     private int indexOf(int id) {
         int rsl = -1;
-        for (int i = 0; i < size; i++) {
+        for (int i = 0; i < items.size(); i++) {
             if (items.get(i).getId() == id) {
                 rsl = i;
                 break;
