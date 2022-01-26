@@ -9,11 +9,12 @@ import java.util.stream.Collectors;
 public class ListToMap {
   public static Map<String, Student> convert(List<Student> list) {
    Map<String, Student> studentMap = list.stream()
-       .distinct()
        .collect(Collectors.toMap(
-            value -> value.getSurname(),
-            value -> value
-        ), Function.identity());
-    return new LinkedHashMap<>();
+           strudent -> strudent.getSurname(),
+           student -> student,
+           (existing, replacement) -> existing
+       ));
+    return studentMap;
+
   }
 }
