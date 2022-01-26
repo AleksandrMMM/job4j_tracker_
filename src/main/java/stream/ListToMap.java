@@ -8,13 +8,13 @@ import java.util.stream.Collectors;
 
 public class ListToMap {
   public static Map<String, Student> convert(List<Student> list) {
-   Map<String, Student> studentMap = list.stream()
+   Map<String, Student> mapStudent = list.stream()
        .collect(Collectors.toMap(
            strudent -> strudent.getSurname(),
            student -> student,
            (existing, replacement) -> existing
        ));
-    return studentMap;
+    return mapStudent;
 
   }
 }
