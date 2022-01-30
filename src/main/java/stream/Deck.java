@@ -3,8 +3,6 @@ package stream;
 import java.util.stream.Stream;
 
 public class Deck {
-    Suit[] levels = Suit.values();
-    Value[] tasks = Value.values();
     public static void main(String[] args) {
         Suit[] levels = Suit.values();
         Value[] tasks = Value.values();
